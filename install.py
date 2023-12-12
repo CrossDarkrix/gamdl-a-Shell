@@ -9,6 +9,9 @@ try:
     ssl._create_default_https_context = ssl._create_unverified_context
 except:
     pass
+if not os.path.exists('gamdl_work'):
+    os.makedirs('gamdl_work', exist_ok=True)
+os.chdir('gamdl_work')
 
 if not os.path.exists('PyYAML-6.0.1-py3-none-any.whl'):
     with open('PyYAML-6.0.1-py3-none-any.whl', 'wb') as yaml:
