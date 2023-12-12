@@ -21,7 +21,7 @@ subprocess.run('pip install PyYAML-6.0.1-py3-none-any.whl', shell=True, stdout=s
 if not os.path.exists('gamdl-1.9.10.3-py3-none-any.whl'):
     with open('gamdl-1.9.10.3-py3-none-any.whl', 'wb') as gamdl:
         gamdl.write(urllib.request.urlopen('https://raw.githubusercontent.com/CrossDarkrix/gamdl-a-Shell/main/gamdl-1.9.10.3-py3-none-any.whl').read())
-print('Installing Without Music Video DL Edition.......')
+print('Installing gamdl Without Music Video DL Edition.......')
 subprocess.run('pip install gamdl-1.9.10.3-py3-none-any.whl', shell=True, stdout=subprocess.PIPE)
 print('Setting gamdl.............')
 install_path = re.search('/var/mobile/Containers.+', '\n'.join(sys.path)).group()
