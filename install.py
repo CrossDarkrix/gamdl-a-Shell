@@ -33,7 +33,7 @@ if os.path.exists('Crypto'):
 if os.path.exists('Cryptodome'): # use builtin module
     print('Cryptodome Module to Cryptodome.old: use builtin module')
     try:
-        os.rename('Cryptodome', 'Cryptodome.old'):
+        os.rename('Cryptodome', 'Cryptodome.old')
     except:
         pass
 os.chdir(os.path.join(os.getenv('HOME'), 'Documents'))
