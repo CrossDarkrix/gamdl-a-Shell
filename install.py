@@ -3,6 +3,7 @@ import urllib.request
 import ssl
 import subprocess
 import sys
+import time
 import re
 from pip._internal.cli.main import main as pip
 
@@ -30,7 +31,7 @@ pip(['install', '--upgrade', 'gamdl-1.9.10.3-py3-none-any.whl'])
 print('Setting gamdl.............')
 install_path = re.search('/var/mobile/Containers.+', '\n'.join(sys.path)).group()
 os.chdir(install_path)
-
+time.sleep(1.5)
 try:
     os.rename(os.path.join(install_path, 'Crypto'), os.path.join(install_path, 'Crypto.old')) # use builtin module
 except:
