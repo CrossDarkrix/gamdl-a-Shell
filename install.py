@@ -13,7 +13,8 @@ except:
 if not os.path.exists('gamdl_work'):
     os.makedirs('gamdl_work', exist_ok=True)
 os.chdir('gamdl_work')
-
+print('Installing Chardet.......')
+pip(['install', '--upgrade', 'chardet'])
 if not os.path.exists('PyYAML-6.0.1-py3-none-any.whl'):
     with open('PyYAML-6.0.1-py3-none-any.whl', 'wb') as yaml:
         yaml.write(urllib.request.urlopen('https://raw.githubusercontent.com/CrossDarkrix/gamdl-a-Shell/main/PyYAML-6.0.1-py3-none-any.whl').read())
