@@ -31,16 +31,16 @@ print('Setting gamdl.............')
 install_path = re.search('/var/mobile/Containers.+', '\n'.join(sys.path)).group()
 os.chdir(install_path)
 
-if os.path.exists('Crypto'):
+if os.path.exists(os.path.join(install_path, 'Crypto')):
     print('Crypto Module to Crypto.old: use builtin module')
     try:
-        os.rename('Crypto', 'Crypto.old') # use builtin module
+        os.rename(os.path.join(install_path, 'Crypto'), os.path.join(install_path, 'Crypto.old')) # use builtin module
     except:
         pass
-if os.path.exists('Cryptodome'): # use builtin module
+if os.path.exists(os.path.join(install_path, 'Cryptodome')): # use builtin module
     print('Cryptodome Module to Cryptodome.old: use builtin module')
     try:
-        os.rename('Cryptodome', 'Cryptodome.old')
+        os.rename(os.path.join(install_path, 'Cryptodome'), os.path.join(install_path, 'Cryptodome.old'))
     except:
         pass
 os.chdir(os.path.join(os.getenv('HOME'), 'Documents'))
